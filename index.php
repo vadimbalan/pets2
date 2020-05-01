@@ -24,9 +24,8 @@ $f3->route('GET /', function()
 // Default route
 $f3->route('GET /order', function()
 {
-    echo '<h1>asdf</h1>';
-    //$view = new Template();
-    //echo $view->render('views/home.html');
+    $view = new Template();
+    echo $view->render('views/pet-order.html');
 });
 
 // Run F3
