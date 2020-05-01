@@ -27,6 +27,7 @@ $f3->route('GET|POST /order', function($f3)
     // Check if the form has been posted
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
     {
+        var_dump($_POST);
         // Validate the data
         if (empty($_POST['pet']))
         {
