@@ -38,16 +38,19 @@ $f3->route('GET|POST /order', function($f3)
             $_SESSION['color'] = $_POST['color'];
 
             $f3->reroute("summary");
+            session_destroy();
         }
-    }
-    else
-    {
-        echo "Get method";
     }
 
     //echo '<h1>Test</h1>';
     $view = new Template();
     echo $view->render('views/pet-order.html');
+});
+
+$f3->route('GET /summary', function()
+{
+    $view = new Template();
+    echo $view->render('views/summary.html');
 });
 
 // Run F3
