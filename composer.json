@@ -1,0 +1,19 @@
+{
+  "name": "vbalan/328/food",
+  "authors":
+  [
+    {
+      "name": "Vadim Balan",
+      "email": "vbalan@mail.greenriver.edu"
+    }
+    ,
+    {
+      "name": "Michael Gulchuk",
+      "email": "mgulchuk@mail.greenriver.edu"
+    }
+  ],
+  "require":
+  {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
