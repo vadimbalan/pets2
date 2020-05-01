@@ -22,8 +22,30 @@ $f3->route('GET /', function()
 });
 
 // Default route
-$f3->route('GET /order', function()
+$f3->route('GET|POST /order', function($f3)
 {
+    // Check if the form has been posted
+    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    {
+        // Validate the data
+        if (empty($_POST['pet']))
+        {
+            echo "Please supply a pet type";
+        }
+        else
+        {
+            $_SESSION['pet'] = $_POST['pet'];
+            $_SESSION['color'] = $_POST['color'];
+
+            $f3->reroute("summary");
+        }
+    }
+    else
+    {
+        echo "Get method";
+    }
+
+    //echo '<h1>Test</h1>';
     $view = new Template();
     echo $view->render('views/pet-order.html');
 });
