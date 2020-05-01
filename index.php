@@ -16,8 +16,15 @@ $f3 = Base::instance();
 // Default route
 $f3->route('GET /', function()
 {
-    echo '<h1>My Pets</h1>';
-    echo "<a href='order'>Order a Pet</a>";
+    //echo '<h1>My Pets</h1>';
+    $view = new Template();
+    echo $view->render('views/pet-home.html');
+});
+
+// Default route
+$f3->route('GET /order', function()
+{
+    echo '<h1>asdf</h1>';
     //$view = new Template();
     //echo $view->render('views/home.html');
 });
